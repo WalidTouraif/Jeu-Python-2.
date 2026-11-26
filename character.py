@@ -11,7 +11,9 @@ def character():
     else:
         return equipement + 1
     print("Nouveau équipement de disponible")
+
     
-        
+
+
 
 
