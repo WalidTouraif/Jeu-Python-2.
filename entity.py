@@ -14,6 +14,7 @@ class Entity(ABC):
         return self.hp > 0
 
     def TakeDamage(self, amount: int):
+        # au minimum 1 degat
         degats = max(amount - self.defense, 1)
         self.hp = max(self.hp - degats, 0)
 

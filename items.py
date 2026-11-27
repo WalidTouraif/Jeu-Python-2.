@@ -19,19 +19,10 @@ class Equipable(Item):
 
 class Consumable(Item):
     def Use(self, target):
+        # la potion soigne ou booste la cible
         if "hp" in self.stats:
             target.Heal(self.stats["hp"])
         if "attack" in self.stats:
             target.attack += self.stats["attack"]
         if "defense" in self.stats:
             target.defense += self.stats["defense"]
-
-
-# Les objets du jeu
-ITEMS = [
-    Consumable("Potion de soin", "Rend 50 PV", 50, "commune", "consommable", {"hp": 50}),
-    Consumable("Elixir de force", "+10 attaque", 20, "rare", "consommable", {"attack": 10}),
-    Equipable("Epee en fer", "Une epee", 30, "commune", "arme", {"attack": 5}),
-    Equipable("Bouclier en bois", "Un bouclier", 30, "commune", "armure", {"defense": 3}),
-    Equipable("Anneau magique", "Un anneau", 10, "rare", "accessoire", {"attack": 10, "defense": 5}),
-]
